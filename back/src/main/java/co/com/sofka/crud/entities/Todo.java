@@ -6,9 +6,8 @@ import javax.persistence.*;
 @Table(name = "Todo")
 public class Todo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "todo_id", nullable = false)
-    private Long id;
+    private String id;
 
     @Column(name = "Label",nullable = false)
     private String label;
@@ -17,21 +16,21 @@ public class Todo {
     private Boolean isCompleted;
 
     @Column(name = "list_id", nullable = false)
-    private Integer ListId;
+    private String listId;
 
-    public Integer getListId() {
-        return ListId;
+    public String getListId() {
+        return listId;
     }
 
-    public void setListId(Integer groupListId) {
-        this.ListId = groupListId;
+    public void setListId(String groupListId) {
+        this.listId = groupListId;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

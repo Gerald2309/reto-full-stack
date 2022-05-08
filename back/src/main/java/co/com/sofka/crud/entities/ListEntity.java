@@ -6,9 +6,8 @@ import javax.persistence.*;
 
 public class ListEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "list_id", nullable = false)
-    private Integer id;
+    private String id;
 
     @Column(name = "label",nullable = false)
     private String label;
@@ -24,11 +23,11 @@ public class ListEntity {
         this.label = label;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 }
