@@ -1,34 +1,30 @@
 package co.com.sofka.crud.entities;
 
-import co.com.sofka.crud.entities.values.IsCompleted;
-import co.com.sofka.crud.entities.values.Label;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Todos")
+@Table(name = "Todo")
 public class Todo {
     @Id
-    @GeneratedValue
-    @Column(name = "id",nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "todo_id", nullable = false)
     private Long id;
 
-    @Column(name = "label",nullable = false)
-    private Label label;
+    @Column(name = "Label",nullable = false)
+    private String label;
 
-    @Column(name = "isCompleted",nullable = false)
-    private IsCompleted isCompleted;
+    @Column(name = "is_completed", nullable = false)
+    private Boolean isCompleted;
 
-    @Column(name = "todo_list_id",nullable = false)
-    private String todoListId;
+    @Column(name = "list_id", nullable = false)
+    private Integer ListId;
 
-
-    public String getTodoListId() {
-        return todoListId;
+    public Integer getListId() {
+        return ListId;
     }
 
-    public void setTodoListId(String todoListId) {
-        this.todoListId = todoListId;
+    public void setListId(Integer groupListId) {
+        this.ListId = groupListId;
     }
 
     public Long getId() {
@@ -39,19 +35,19 @@ public class Todo {
         this.id = id;
     }
 
-    public Label getLabel() {
+    public String getLabel() {
         return label;
     }
 
-    public void setLabel(Label label) {
+    public void setLabel(String label) {
         this.label = label;
     }
 
-    public IsCompleted isCompleted() {
+    public Boolean getIsCompleted() {
         return isCompleted;
     }
 
-    public void setIsCompleted(IsCompleted isCompleted) {
-        this.isCompleted = isCompleted;
+    public void setIsCompleted(Boolean completed) {
+        isCompleted = completed;
     }
 }

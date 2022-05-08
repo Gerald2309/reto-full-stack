@@ -19,11 +19,11 @@ public class TodoService {
         return repository.save(todo);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         repository.delete(get(id));
     }
 
-    public Todo get(Long id){
+    public Todo get(Integer id){
          return repository.findById(id).orElseThrow();
     }
 

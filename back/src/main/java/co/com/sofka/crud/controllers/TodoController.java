@@ -6,23 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("/api/${config.project.version}")
+@CrossOrigin(origins = "${config.cross.origin}")
 public class TodoController {
 
     @Autowired
     private TodoService service;
 
-    @GetMapping(value = "api/todos")
+    @GetMapping(value = "/todos")
     public Iterable<Todo> list(){
         return service.list();
     }
     
-    @PostMapping(value = "api/todo")
+    @PostMapping(value = "/todo")
     public Todo save(@RequestBody Todo todo){
         return service.save(todo);
     }
 
-    @PutMapping(value = "api/todo")
+    @PutMapping(value = "/todo")
     public Todo update(@RequestBody Todo todo){
         if(todo.getId() != null){
             return service.save(todo);
@@ -30,13 +31,13 @@ public class TodoController {
         throw new RuntimeException("No existe el id para actualziar");
     }
 
-    @DeleteMapping(value = "api/{id}/todo")
-    public void delete(@PathVariable("id")Long id){
+    @DeleteMapping(value = "/todo/{id}")
+    public void delete(@PathVariable("id")Integer id){
         service.delete(id);
     }
 
-    @GetMapping(value = "api/{id}/todo")
-    public Todo get(@PathVariable("id") Long id){
+    @GetMapping(value = "/todo/{id}")
+    public Todo get(@PathVariable("id") Integer id){
         return service.get(id);
     }
 
