@@ -8,11 +8,8 @@ public class ListEntity {
     @Id
     @Column(name = "list_id", nullable = false)
     private String id;
-
     @Column(name = "label",nullable = false)
     private String label;
-
-
     public ListEntity(){}
 
     public String getLabel() {

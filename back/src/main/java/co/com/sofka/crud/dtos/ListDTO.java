@@ -5,7 +5,7 @@ import java.util.List;
 public class ListDTO {
     private String id;
     private String label;
-    private List<TodoDTO> todoDTOS;
+    private List<TodoDTO> todos;
 
     public ListDTO() {
     }
@@ -26,11 +26,11 @@ public class ListDTO {
         this.label = label;
     }
 
-    public List<TodoDTO> getTodoDTOS() {
-        return todoDTOS;
+    public List<TodoDTO> getTodos() {
+        return todos;
     }
 
-    public void setTodoDTOS(List<TodoDTO> todoDTOS) {
-        this.todoDTOS = todoDTOS;
+    public void setTodos(List<TodoDTO> todos) {
+        this.todos = todos;
     }
 }

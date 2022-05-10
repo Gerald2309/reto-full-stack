@@ -18,7 +18,7 @@ public class ListMapper {
 
         listDTO.setId(listEntity.getId());
         listDTO.setLabel(listEntity.getLabel());
-        listDTO.setTodoDTOS(todoDTOS);
+        listDTO.setTodos(todoDTOS);
 
         return listDTO;
     }

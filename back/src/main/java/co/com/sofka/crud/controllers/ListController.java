@@ -14,17 +14,17 @@ public class ListController {
     @Autowired
     private ListService service;
 
-    @GetMapping(value = "/listToDo")
+    @GetMapping(value = "/list")
     public Iterable<ListDTO> list(){
         return this.service.list();
     }
 
-    @PostMapping(value = "/listToDo")
+    @PostMapping(value = "/list")
     public ListEntity save(@RequestBody ListEntity listEntity){
         return this.service.save(listEntity);
     }
 
-    @DeleteMapping(value = "/listToDo/{id}")
+    @DeleteMapping(value = "/list/{id}")
     public void delete(@PathVariable("id") Integer id){
         service.delete(id);
     }
