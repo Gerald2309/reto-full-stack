@@ -13,12 +13,12 @@ public class TodoController {
     @Autowired
     private TodoService service;
 
-    @PostMapping(value = "/todo")
+    @PostMapping(value = "/toDo")
     public Todo save(@RequestBody Todo todo){
         return this.service.save(todo);
     }
 
-    @PutMapping(value = "/todo")
+    @PutMapping(value = "/toDo")
     public Todo update(@RequestBody Todo todo){
         if(todo.getId() != null){
             return this.service.save(todo);
@@ -26,7 +26,7 @@ public class TodoController {
         throw new RuntimeException("No existe el id para actualziar");
     }
 
-    @DeleteMapping(value = "/todo/{id}")
+    @DeleteMapping(value = "/toDo/{id}")
     public void delete(@PathVariable("id")String id){
         this.service.delete(id);
     }
